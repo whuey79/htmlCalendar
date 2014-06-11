@@ -10,7 +10,6 @@ function cal() {
 }
 
 function drawCal() {
-
     var daysOfWeek = ['Su','Mo','Tu','We','Th','Fr','Sa'];
     var let = ['a','b','c','d','e','f'];
     var text = "";
