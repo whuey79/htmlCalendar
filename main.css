@@ -1,0 +1,10 @@
+
+th {
+  background:bisque;
+}
+
+th,td { 
+    text-align:center;
+    border:1px solid gray;
+    width:50px;
+} 
