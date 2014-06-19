@@ -1,6 +1,9 @@
+body {
+    margin:0px 20px;
+}
 
 th {
-  background:bisque;
+    background:bisque;
 }
 
 th,td { 
@@ -8,3 +11,12 @@ th,td {
     border:1px solid gray;
     width:50px;
 } 
+
+table
+{
+    border-collapse:collapse;
+}
+
+.today {
+    background:lavender;
+}

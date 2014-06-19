@@ -7,9 +7,10 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-<p>Calendar in JS</p>
-<input id='mon' type='number' name='Month1' min='1' max='12'>  Month (1-12)</input>
-
+<p>JS Calendar</p>
+<input id='mon' type='number' name='Month1' min='1' max='12'> Pick a Month (1-12)</input>
+<br></br>
+<button id='butt' type='button' onclick='showToday();'>Show today</button>
 <br><br>
 
 <div id = "here"></div>
@@ -23,12 +24,17 @@ $(document).ready( function(){
       //alert(x)
       if ( x >= 0 && x < 12 ) {
         $('#here').html(drawCal(x,1));
+        $('#butt').show();
       }
     }    
   });
 //  document.getElementById('here').innerHTML=drawCal();
 });
 </script>
+
+<br><br>
+
+
 
 </body>
 </html>

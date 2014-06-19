@@ -65,3 +65,9 @@ function drawCal(month, firstDay) {
     outline.push("</table>");
     return( outline.join('\n') );
 }
+
+function showToday() {
+  var d = new Date();
+  $('#here').html(drawCal(d.getMonth(),1));
+  $("td:contains('" + d.getDate() + "')").addClass('today');
+}
