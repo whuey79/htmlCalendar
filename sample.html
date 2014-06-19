@@ -4,13 +4,28 @@
 <title>Sample HTML5 Webpage</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 <script src="cal.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
 <p>This is a sample webpage.</p>
+<input id='mon' type='number' name='Month1' min='0' max='11'>Month 0-11</input>
+<br><br>
+
 <div id = "here"></div>
 
 <script>
-document.getElementById('here').innerHTML=drawCal();
+$(document).ready( function(){
+  $('#mon').on('input',function() {
+    var x = $('#mon').val();
+    if (x) {
+      alert(x);
+      $('#here').html(drawCal(x,1));
+    }    
+  });
+  
+  
+//  document.getElementById('here').innerHTML=drawCal();
+});
 </script>
 
 </body>
