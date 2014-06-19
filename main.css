@@ -10,13 +10,18 @@ th,td {
     text-align:center;
     border:1px solid gray;
     width:50px;
-} 
+    padding:5px; 
+}
 
-table
-{
+table {
     border-collapse:collapse;
 }
 
 .today {
-    background:lavender;
+    background:lemonchiffon;
+}
+
+caption {
+    font-size:125%;
+    margin-bottom:5px;
 }

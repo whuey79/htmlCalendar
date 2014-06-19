@@ -10,24 +10,29 @@
 <p>JS Calendar</p>
 <input id='mon' type='number' name='Month1' min='1' max='12'> Pick a Month (1-12)</input>
 <br></br>
-<button id='butt' type='button' onclick='showToday();'>Show today</button>
+<button id='butt' type='button'>Show today</button>
 <br><br>
 
 <div id = "here"></div>
 
 <script>
 $(document).ready( function(){
-  $('#mon').on('input',function() {
-    var x = $('#mon').val();
-    if ( x ) {
-      x = parseInt(x,10)-1;
-      //alert(x)
-      if ( x >= 0 && x < 12 ) {
-        $('#here').html(drawCal(x,1));
-        $('#butt').show();
-      }
-    }    
-  });
+    $('#mon').on('input',function() {
+        var x = $('#mon').val();
+        if ( x ) {
+            x = parseInt(x,10)-1;
+            //alert(x)
+            if ( x >= 0 && x < 12 ) {
+                $('#here').html( drawCal(x) );
+                $('#butt').show();
+            }
+        }    
+    });
+    $('#butt').on('click',function() {
+          var d = new Date();
+          $('#here').html(drawCal( d.getMonth() ));
+          $("td:contains('" + d.getDate() + "')").addClass('today');
+    });
 //  document.getElementById('here').innerHTML=drawCal();
 });
 </script>

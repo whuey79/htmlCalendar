@@ -1,6 +1,6 @@
+// 
 
-
-function drawCal(month, firstDay) {
+function drawCal(month) {
     'use strict';
     var daysOfWeek = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
     var letter = ['a','b','c','d','e','f'];
@@ -14,15 +14,10 @@ function drawCal(month, firstDay) {
                 'October','November','December'];
 
     var d = new Date();
-                
+    d.setDate(1);
+    
     if ( typeof month !== 'undefined' ) {
         d.setMonth(month);
-    }
-    if ( typeof firstDay !== 'undefined' ) {
-        d.setDate(firstDay);
-    }
-    else {
-        d.setDate(1);
     }
     
     var firstOfTheMonth = d.getDay();  // 0-6
@@ -52,7 +47,7 @@ function drawCal(month, firstDay) {
         text = "<tr>\n";
         for (var i = 0; i< daysOfWeek.length; i++) {
             if (( i < firstOfTheMonth && j == 0 ) || ( dayCounter > maxDayCounter )) {
-                text += "<td id='" + letter[j] +i +"'>-</td>\n";
+                text += "<td id='" + letter[j] +i +"'></td>\n";
             }
             else {
                 text += "<td id='" + letter[j] +i +"'>" + dayCounter + "</td>\n";
@@ -64,10 +59,4 @@ function drawCal(month, firstDay) {
     }
     outline.push("</table>");
     return( outline.join('\n') );
-}
-
-function showToday() {
-  var d = new Date();
-  $('#here').html(drawCal(d.getMonth(),1));
-  $("td:contains('" + d.getDate() + "')").addClass('today');
 }
