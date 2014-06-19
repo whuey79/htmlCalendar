@@ -7,8 +7,9 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 <body>
-<p>This is a sample webpage.</p>
-<input id='mon' type='number' name='Month1' min='0' max='11'>Month 0-11</input>
+<p>Calendar in JS</p>
+<input id='mon' type='number' name='Month1' min='1' max='12'>  Month (1-12)</input>
+
 <br><br>
 
 <div id = "here"></div>
@@ -17,13 +18,14 @@
 $(document).ready( function(){
   $('#mon').on('input',function() {
     var x = $('#mon').val();
-    if (x) {
-      alert(x);
-      $('#here').html(drawCal(x,1));
+    if ( x ) {
+      x = parseInt(x,10)-1;
+      //alert(x)
+      if ( x >= 0 && x < 12 ) {
+        $('#here').html(drawCal(x,1));
+      }
     }    
   });
-  
-  
 //  document.getElementById('here').innerHTML=drawCal();
 });
 </script>
