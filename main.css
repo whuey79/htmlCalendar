@@ -1,5 +1,6 @@
-body {
-    margin:0px 20px;
+.container {
+    margin: 0px 100px;
+    width:80%;
 }
 
 table {
