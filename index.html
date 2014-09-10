@@ -8,7 +8,7 @@
   </head>
   <body>
   <div class='container'>
-    <p>JS Calendar</p>
+    <p>HTML JS Calendar</p>
     <input id='mon' type='number' name='Month1' min='1' max='12'> Pick a Month (1-12)</input>
     <br></br>
     <button id='butt' type='button'>Show today</button>
@@ -17,22 +17,23 @@
   </div>
   <script>
   $(document).ready( function(){
+  
+      var $here = $('#here');
+      
       $('#mon').on('input',function() {
-          var x = $('#mon').val();
+          var x = $(this).val();
           if ( x ) {
               x = parseInt(x,10)-1;
               //alert(x)
               if ( x >= 0 && x < 12 ) {
-                var y = drawCal( { "month":x } );
-
-                $('#here').html( y );
+                $here.html( drawCal( { "month":x } ) );
                 $('#butt').show();
               }
           }    
       });
       $('#butt').on('click',function() {
             var d = new Date();
-            $('#here').html(drawCal());
+            $here.html(drawCal());
             $("td:contains('" + d.getDate() + "')").addClass('today');
       });
   });
